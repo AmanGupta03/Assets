@@ -1,0 +1,275 @@
+{
+	"topic": "BERT",
+	"no_of_head": 13,
+	"introduction": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+	"section": [
+			{
+				
+				"heading":  "Introduction",
+
+				"content": [
+					 {
+						"title":"",
+						"desc": ["There are two existing strategies for applying pre-trained language representations to down-stream tasks: feature-basedandfine-tuning."]
+
+					},
+
+					{
+						"title":"",
+						"desc": ["In this paper, we improve the fine-tuning based approaches by proposing  BERT:Bidirectional Encoder Representations from Transformers."]
+					},
+
+					{
+						"title":"",
+						"desc": ["BERT uses masked language models to enable pre-trained deep bidirectional representations."]
+					},
+
+					{
+						"title":"",
+						"desc": ["BERT  is  the  first  fine-tuning based representation model that achieves state-of-the-art  performance  on  a  large  suiteof sentence-levelandtoken-level tasks, outper-forming many task-specific architectures"]
+					},
+
+					{
+						"title":"",
+						"desc": ["BERT advances the state of the art for eleven NLP tasks."]
+					}
+				],
+
+				"img": ""
+			}
+
+
+			{
+				"heading":  " Unsupervised Feature-based Approaches",
+
+				"content": [ 
+					{
+						"title": "",
+						"desc": ["Pre-trained word embeddings are an integral part of modern NLP systems,  offering significant improvements over embeddingslearned from scratch."]
+					},
+
+					{
+						"title": "",
+						"desc": ["ELMo, is feature-based and not deeply bidirectional."]
+					},
+
+					{
+						"title": "",
+						"desc": ["ELMo and its predecessor generalize traditional word embedding re-search along a different dimension."]
+					}
+				],
+
+			"img" : ""
+		},
+
+
+		{
+			"heading":  " Unsupervised Fine-tuning Approaches",
+
+			"content": [
+				{
+					"title": "",
+					"desc": ["As with the feature-based approaches,  the first works in this direction only pre-trained word em-bedding  parameters from unlabeled text."]
+				},
+
+				{
+					"title": "",
+					"desc": ["The advantage of these approaches is that  few  parameters  need  to  be  learned  froms cratch."]
+				},
+
+				{
+					"title": "",
+					"desc": ["Left-to-right language  modeling  and  auto-encoder  objectives  have  been  used for pre-training such models."]
+				}
+			],
+			"img" : "https://github.com/AmanGupta03/Assets/blob/master/x1.png"
+		},
+
+
+
+		{
+			"heading":  "Transfer Learning from Supervised Data",
+
+			"content": [
+				{
+					"title": "",
+					"desc": ["computer vision research has also demonstrated the importance of transfer learning from large pre-trained models, where an effective recipe is to fine-tune models pre-trained with ImageNet."]
+				},
+			],
+			"img" : ""
+		},
+
+		
+
+		{
+			"heading":  "Pre-training BERT",
+
+			"content": [
+				{
+					"title": "Task #1: Masked LM",
+					"desc": ["In order to train a deep bidirectional representa-tion, we simply mask some percentage of the input tokens at random, and then predict those masked tokens", "We refer to this procedure as a “masked LM” (MLM), although it is often referred to as aClozetask in the literature"]
+				},
+
+			 	{
+					"title": "Next Sentence Prediction (NSP)",
+					"desc": ["In  order to  train  a  model  that  understands  sentence  rela-tionships,  we  pre-train  for  a  binarized next  sentence  predictiontask that can be trivially generated from any mono lingualcorpus"]
+				}
+			],
+			"img" : ""
+		},
+
+
+
+		{
+			"heading":  "Fine-tuning BERT",
+
+			"content": [
+				{
+					"title": "",
+					"desc": ["Fine-tuning   is   straightforward   since   the   self-attention   mechanism   in   the   Transformer   al-lows  BERT  to  model  many  downstream  tasks whether they involve single text or text pairs by swapping out the appropriate inputs and outputs."]
+				},
+
+
+				{
+					"title": "",
+					"desc": [" BERT instead uses the self-attention mechanism to unify these two stages, as encoding a concatenated textpair  with  self-attention  effectively  includesbidi-rectional cross attention between two sentences"]
+				},
+
+
+			],
+			"img" : ""
+		},
+
+			
+		{
+			"heading":  "GLUE",
+
+			"content" : [
+				{
+					"title": "",
+					"desc": ["The General Language Understanding Evaluation(GLUE)"]
+				},
+
+				{
+					"title": " ",
+					"desc": ["collection of diverse natural language understanding tasks."]
+				},
+			],
+
+			"img": ""
+		},
+
+		
+		{
+			"heading":  "SQuAD v1.1",
+
+			"content" : [
+			 	{
+					"title": "",
+					"desc": ["Stanford Question Answering Dataset"]
+				},
+
+				{
+					"title": "",
+					"desc": ["It is a  collection  of  100k  crowd-sourced  question/answer  pairs"]
+				},
+
+				{
+					"title": "",
+					"desc": ["Given  a  question  and  a  passage  from Wikipedia  containing  the  answer,  the  task  is  topredict the answer text span in the passage"]
+				},
+
+				{
+					"title": "",
+					"desc": ["we represent the input question and pas-sage as a single packed sequence, with the question using the A embedding and the passage usingt the B embedding"]
+				},
+
+
+				{
+					"title": "",
+					"desc": ["We only introduce a start vector S∈R Hand an end vector E∈R H duringfine-tuning.   The probability of wordibeing thestart of the answer span is computed as a dot prod-uct betweenT iand S followed by a softmax overall of the words in the paragraph:Pi=eS·Ti∑jeS·Tj."]
+				}
+
+			],
+			"img": ""
+		}
+
+
+		
+		{
+			"heading":  "SQuAD v2.0",
+			"content": [
+				{
+					"title": "",
+					"desc": ["The  SQuAD  2.0  task  extends  the  SQuAD  1.1problem definition by allowing for the possibilitythat no short answer exists in the provided para-graph, making the problem more realistic"]
+				}
+			],
+			"img": ""
+		},
+
+			
+		{
+			"heading":  "SWAG",
+			"content": [ 
+				{
+					"title": "",
+					"desc": ["The   Situations   With   Adversarial   Generations(SWAG) dataset contains 113k sentence-pair com-pletion examples that evaluate grounded common-sense inference"]
+				},
+
+				{
+					"title": "",
+					"desc": ["Given a sen-tence, the task is to choose the most plausible continuation among four choices"]
+				}
+			],
+			"img": ""
+		},
+
+		
+		{
+			"heading":  "Ablation Studies",
+			"content": [
+				{
+					"title": "",
+					"desc": ["we perform ablation experimentsover a number of facets of BERT in order to betterunderstand their relative importance"]
+				}
+			],
+			"img" : ""
+		},
+
+		
+		{
+			"heading":  "Feature-based Approach with BERT",
+			"content": [
+				{
+					"title": "",
+					"desc": ["All of the BERT results presented so far have usedthe fine-tuning approach, where a simple classifi-cation layer is added to the pre-trained model, andall  parameters  are  jointly  fine-tuned  on  a  down-stream task"]
+				},
+
+				{
+					"title": "",
+					"desc": ["there  are  major  computational  benefitsto pre-compute an expensive representation of the training data once and then run many experiments with cheaper models on top of this representation"]
+				}
+
+			],
+			"img" : ""
+		},
+
+		
+		{
+			"heading":  "Conclusion",
+			"content": [
+				{
+					"title": "",
+					"desc": ["Recent  empirical  improvements  due  to  transferlearning with language models have demonstrated that rich, unsupervised pre-training is an integral part of many language understanding systems"]
+				},
+
+				{
+						"title": "",
+						"desc": ["Our major contribution is further general-izing these findings to deepbidirectional architec-tures, allowing the same pre-trained model to suc-cessfully tackle a broad set of NLP tasks"]
+				}
+			],
+			"img" : ""
+		}
+
+	] 
+}
