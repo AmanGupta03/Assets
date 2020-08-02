@@ -2,7 +2,7 @@
 	"topic": "BERT",
 	"no_of_head": 13,
 	"introduction": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
-	"section": [
+	"sections": [
 			{
 				
 				"heading":  "Introduction",
@@ -36,7 +36,7 @@
 				],
 
 				"img": ""
-			}
+			},
 
 
 			{
@@ -82,7 +82,7 @@
 					"desc": ["Left-to-right language  modeling  and  auto-encoder  objectives  have  been  used for pre-training such models."]
 				}
 			],
-			"img" : "https://github.com/AmanGupta03/Assets/blob/master/x1.png"
+			"img" : "https://raw.githubusercontent.com/AmanGupta03/Assets/master/x1.png"
 		},
 
 
@@ -99,25 +99,22 @@
 			"img" : ""
 		},
 
-		
-
 		{
 			"heading":  "Pre-training BERT",
 
 			"content": [
 				{
 					"title": "Task #1: Masked LM",
-					"desc": ["In order to train a deep bidirectional representa-tion, we simply mask some percentage of the input tokens at random, and then predict those masked tokens", "We refer to this procedure as a “masked LM” (MLM), although it is often referred to as aClozetask in the literature"]
+					"desc" : ["In order to train a deep bidirectional representa-tion, we simply mask some percentage of the input tokens at random"]
 				},
 
 			 	{
 					"title": "Next Sentence Prediction (NSP)",
-					"desc": ["In  order to  train  a  model  that  understands  sentence  rela-tionships,  we  pre-train  for  a  binarized next  sentence  predictiontask that can be trivially generated from any mono lingualcorpus"]
+					"desc": ["In  order to  train  a  model  that  understands  sentence  rela-tionships,  we  pre-train  for  a  binarized next  sentence  predictiontask that can be trivially generated from any mono lingualcorpus", "We referred this procdedure as Masked LM"]
 				}
 			],
 			"img" : ""
 		},
-
 
 
 		{
@@ -140,7 +137,6 @@
 			"img" : ""
 		},
 
-			
 		{
 			"heading":  "GLUE",
 
@@ -187,12 +183,12 @@
 
 				{
 					"title": "",
-					"desc": ["We only introduce a start vector S∈R Hand an end vector E∈R H duringfine-tuning.   The probability of wordibeing thestart of the answer span is computed as a dot prod-uct betweenT iand S followed by a softmax overall of the words in the paragraph:Pi=eS·Ti∑jeS·Tj."]
+					"desc": ["We only introduce a start S e R Hand an end vector E e R during fine-tuning", "The probability of wordibeing thestart of the answer span is computed as a dot product between T i and S followed by a softmax overall of the words in the the paragraph Pi=es.TiZjes.Tz"]
 				}
 
 			],
 			"img": ""
-		}
+		},
 
 
 		
@@ -207,7 +203,6 @@
 			"img": ""
 		},
 
-			
 		{
 			"heading":  "SWAG",
 			"content": [ 
@@ -270,6 +265,5 @@
 			],
 			"img" : ""
 		}
-
 	] 
 }
